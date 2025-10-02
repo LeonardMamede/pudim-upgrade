@@ -1,0 +1,144 @@
+:root {
+  --cor-fundo: #BF8450;
+  --cor-texto: #26110C;
+  --cor-destaque: #401B13;
+  --cor-caixa: #d0b08f;
+  --cor-clara: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+header {
+  background: var(--cor-caixa);
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 2px solid var(--cor-destaque);
+}
+
+header h1 {
+  color: var(--cor-destaque);
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* mobile primeiro */
+  gap: 0.5rem;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: bold;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--cor-destaque);
+  color: var(--cor-clara);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr; /* celular: 1 coluna */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+article img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+}
+
+article p {
+  background: var(--cor-caixa);
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: justify;
+}
+
+aside {
+  background: var(--cor-caixa);
+  padding: 1rem;
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--cor-caixa);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+form input,
+form select,
+form button {
+  padding: 0.5rem;
+  border: 1px solid var(--cor-destaque);
+  border-radius: 4px;
+}
+
+form button {
+  background: var(--cor-destaque);
+  color: var(--cor-clara);
+  cursor: pointer;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  main {
+    grid-template-columns: 2fr 1fr; /* conteúdo + aside */
+  }
+
+  article img {
+    width: 300px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  main {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  article img {
+    width: 400px;
+  }
+}
